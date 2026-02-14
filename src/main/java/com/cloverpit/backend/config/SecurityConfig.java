@@ -46,7 +46,7 @@ public class SecurityConfig {
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/login", "/health").permitAll()
-                .requestMatchers("/stats/clan", "/players/rankings", "/players/*/matches", 
+                .requestMatchers("/stats/clan", "/players/**", "/players/*/matches", 
                                  "/matches/recent").permitAll()
                 .requestMatchers("/applications").permitAll()
                 .anyRequest().authenticated()
